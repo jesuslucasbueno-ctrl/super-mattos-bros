@@ -1,0 +1,373 @@
+[gd_scene format=3 uid="uid://bvg5h7erwpqo4"]
+
+[ext_resource type="Texture2D" uid="uid://bmiodhv3fniwl" path="res://fases/fase_11/boss_11/sprites/Arich-sheet-body.png" id="1_6vlft"]
+[ext_resource type="Texture2D" uid="uid://cadmgksppdnu5" path="res://fases/fase_11/boss_11/sprites/Arich-sheet-legs.png" id="2_2638r"]
+[ext_resource type="Texture2D" uid="uid://chbaadqcbulnb" path="res://fases/fase_11/boss_11/sprites/Arich-sheet-head-hurt.png" id="3_igm0k"]
+[ext_resource type="Texture2D" uid="uid://bmbwlri6rqsbc" path="res://fases/fase_11/boss_11/sprites/Arich-sheet-head-idle.png" id="4_3oyjd"]
+[ext_resource type="Script" uid="uid://dq84ymwtlmpq8" path="res://fases/fase_11/boss_11/boss.gd" id="script_boss"]
+
+[ext_resource type="Script" path="res://comum/prefabs/hurtbox.gd" id="hurt_script"]
+[ext_resource type="Script" path="res://comum/prefabs/hitbox.gd" id="hit_script"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poiux"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjnqs"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7krr"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v6va"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et0jl"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pklm"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1t1w"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7tsi"]
+atlas = ExtResource("1_6vlft")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phvjj"]
+atlas = ExtResource("2_2638r")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iw48"]
+atlas = ExtResource("2_2638r")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nenu"]
+atlas = ExtResource("2_2638r")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc1ud"]
+atlas = ExtResource("2_2638r")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uiei"]
+atlas = ExtResource("2_2638r")
+region = Rect2(640, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3imaa"]
+atlas = ExtResource("2_2638r")
+region = Rect2(800, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfcit"]
+atlas = ExtResource("2_2638r")
+region = Rect2(960, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wn7q"]
+atlas = ExtResource("3_igm0k")
+region = Rect2(0, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3ioc"]
+atlas = ExtResource("3_igm0k")
+region = Rect2(32, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di8uy"]
+atlas = ExtResource("3_igm0k")
+region = Rect2(64, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqmm3"]
+atlas = ExtResource("3_igm0k")
+region = Rect2(96, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxo27"]
+atlas = ExtResource("4_3oyjd")
+region = Rect2(0, 0, 29, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2i2r"]
+atlas = ExtResource("4_3oyjd")
+region = Rect2(29, 0, 29, 30)
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:texture")
+tracks/0/interp = 0
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_poiux"), SubResource("AtlasTexture_jjnqs"), SubResource("AtlasTexture_g7krr"), SubResource("AtlasTexture_1v6va"), SubResource("AtlasTexture_et0jl"), SubResource("AtlasTexture_5pklm"), SubResource("AtlasTexture_s1t1w"), SubResource("AtlasTexture_v7tsi")]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("legs:texture")
+tracks/1/interp = 0
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_phvjj"), SubResource("AtlasTexture_0iw48"), SubResource("AtlasTexture_7nenu"), SubResource("AtlasTexture_vc1ud"), SubResource("AtlasTexture_2uiei"), SubResource("AtlasTexture_3imaa"), SubResource("AtlasTexture_xfcit"), SubResource("AtlasTexture_phvjj")]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("head:texture")
+tracks/2/interp = 0
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r"), SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r"), SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r"), SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r")]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 0
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hurt"]
+resource_name = "hurt"
+length = 1.6
+
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:texture")
+tracks/0/interp = 0
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_poiux"), SubResource("AtlasTexture_jjnqs"), SubResource("AtlasTexture_g7krr"), SubResource("AtlasTexture_1v6va"), SubResource("AtlasTexture_et0jl"), SubResource("AtlasTexture_5pklm"), SubResource("AtlasTexture_s1t1w"), SubResource("AtlasTexture_v7tsi")]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("legs:texture")
+tracks/1/interp = 0
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_phvjj"), SubResource("AtlasTexture_0iw48"), SubResource("AtlasTexture_7nenu"), SubResource("AtlasTexture_vc1ud"), SubResource("AtlasTexture_2uiei"), SubResource("AtlasTexture_3imaa"), SubResource("AtlasTexture_xfcit"), SubResource("AtlasTexture_phvjj")]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("head:texture")
+tracks/2/interp = 0
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_7wn7q"), SubResource("AtlasTexture_b3ioc"), SubResource("AtlasTexture_di8uy"), SubResource("AtlasTexture_hqmm3"), SubResource("AtlasTexture_hqmm3"), SubResource("AtlasTexture_hqmm3"), SubResource("AtlasTexture_hqmm3"), SubResource("AtlasTexture_hqmm3")]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 0
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_RESET"]
+resource_name = "RESET"
+length = 0.001
+
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:texture")
+tracks/0/interp = 0
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_poiux")]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("legs:texture")
+tracks/1/interp = 0
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_phvjj")]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("head:texture")
+tracks/2/interp = 0
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("AtlasTexture_dxo27")]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 0
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_die"]
+resource_name = "die"
+length = 1
+
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:texture")
+tracks/0/interp = 0
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_poiux"), SubResource("AtlasTexture_jjnqs"), SubResource("AtlasTexture_g7krr"), SubResource("AtlasTexture_1v6va"), SubResource("AtlasTexture_et0jl"), SubResource("AtlasTexture_5pklm"), SubResource("AtlasTexture_s1t1w"), SubResource("AtlasTexture_v7tsi")]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("legs:texture")
+tracks/1/interp = 0
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_phvjj"), SubResource("AtlasTexture_0iw48"), SubResource("AtlasTexture_7nenu"), SubResource("AtlasTexture_vc1ud"), SubResource("AtlasTexture_2uiei"), SubResource("AtlasTexture_3imaa"), SubResource("AtlasTexture_xfcit"), SubResource("AtlasTexture_phvjj")]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("head:texture")
+tracks/2/interp = 0
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6000000000000001, 0.8, 1, 1.2000000000000002, 1.4000000000000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r"), SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r"), SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r"), SubResource("AtlasTexture_dxo27"), SubResource("AtlasTexture_o2i2r")]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 0
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_boss"]
+_data = {
+&"RESET": SubResource("Animation_RESET"),
+&"idle": SubResource("Animation_idle"),
+&"hurt": SubResource("Animation_hurt"),
+&"die": SubResource("Animation_die")
+}
+
+[sub_resource type="RectangleShape2D" id="Shape_body"]
+size = Vector2(62, 30)
+
+[sub_resource type="RectangleShape2D" id="Shape_head"]
+size = Vector2(30, 26)
+
+[sub_resource type="RectangleShape2D" id="Shape_contact"]
+size = Vector2(68, 46)
+
+[sub_resource type="Animation" id="Animation_arena"]
+resource_name = "arena"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:movement_offset")
+tracks/0/interp = 2
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3.0, 3.5, 3.9, 5.5, 6.0),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-110, -65), Vector2(-220, 0), Vector2(-100, -85), Vector2(90, -10), Vector2(-40, -70), Vector2(-160, 20), Vector2(-160, 55), Vector2(-160, 55), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_movement"]
+_data = {
+&"arena": SubResource("Animation_arena")
+}
+
+[node name="boss" type="CharacterBody2D" groups=["inimigos"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("script_boss")
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
+texture = SubResource("AtlasTexture_poiux")
+
+[node name="legs" type="Sprite2D" parent="."]
+position = Vector2(-48, 16)
+texture = SubResource("AtlasTexture_phvjj")
+
+[node name="head" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
+texture = SubResource("AtlasTexture_dxo27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-48, -16)
+shape = SubResource("Shape_body")
+one_way_collision = true
+
+[node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(-48, 8)
+collision_layer = 32
+collision_mask = 64
+script = ExtResource("hurt_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("Shape_head")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(-48, 8)
+collision_layer = 16
+collision_mask = 32
+script = ExtResource("hit_script")
+damage = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("Shape_contact")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries/ = SubResource("AnimationLibrary_boss")
+autoplay = "idle"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Status" type="Label" parent="HUD"]
+visible = false
+offset_left = 200.0
+offset_top = 48.0
+offset_right = 780.0
+offset_bottom = 80.0
+text = "ARICH"
+
+[node name="Movement" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_movement")
+
+[connection signal="damage_received" from="hurtbox" to="." method="_damage"]

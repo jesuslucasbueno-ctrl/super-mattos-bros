@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fases/fase_06/items_06/chave/chave.gd" id="1_chave"]
+[ext_resource type="Texture2D" path="res://comum/cenas/selecao_fases/card_fase/chave.png" id="2_chave"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_chave"]
+radius = 12.0
+
+[node name="chave" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_chave")
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_chave")
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("2_chave")

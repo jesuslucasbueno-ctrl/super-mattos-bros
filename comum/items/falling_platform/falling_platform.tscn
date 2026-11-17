@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c0on7a8uj5mm3"]
+
+[ext_resource type="Texture2D" uid="uid://gijr4jppu45c" path="res://comum/items/falling_platform/platform-long_fall.png" id="1_vmvs5"]
+[ext_resource type="Script" uid="uid://b24wd3ub5haoi" path="res://comum/items/falling_platform/falling_platform.gd" id="1_wimem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36jtr"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smrfm"]
+size = Vector2(32, 5)
+
+[sub_resource type="Animation" id="Animation_wimem"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_dt73r"]
+resource_name = "shake"
+length = 0.39999999999999997
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(8, 0), Vector2(0, 0), Vector2(-8, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3hmw1"]
+_data = {
+&"RESET": SubResource("Animation_wimem"),
+&"shake": SubResource("Animation_dt73r")
+}
+
+[node name="falling_platform" type="AnimatableBody2D" unique_id=818061676]
+collision_mask = 2
+sync_to_physics = false
+script = ExtResource("1_wimem")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1529046779]
+texture = ExtResource("1_vmvs5")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1185502856]
+shape = SubResource("RectangleShape2D_36jtr")
+one_way_collision = true
+
+[node name="player_detector" type="Area2D" parent="." unique_id=1663303374]
+collision_mask = 2
+
+[node name="collision" type="CollisionShape2D" parent="player_detector" unique_id=228840408]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_smrfm")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=388434731]
+libraries/ = SubResource("AnimationLibrary_3hmw1")
+
+[node name="respawn_timer" type="Timer" parent="." unique_id=946042630]
+one_shot = true

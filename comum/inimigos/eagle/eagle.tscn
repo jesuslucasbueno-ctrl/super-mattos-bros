@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://cup5a2m2r5sh4"]
+
+[ext_resource type="Script" uid="uid://ckyppfdcg0uk7" path="res://comum/inimigos/eagle/eagle.gd" id="1_48ood"]
+[ext_resource type="Texture2D" uid="uid://bk7qndn5a8p5" path="res://comum/inimigos/eagle/sprites/dive attack/sprites/attack1.png" id="2_48ood"]
+[ext_resource type="Texture2D" uid="uid://djb8kfo4f3mfn" path="res://comum/inimigos/eagle/sprites/dive attack/sprites/attack2.png" id="3_ve51p"]
+[ext_resource type="Texture2D" uid="uid://1x5qpu0dahek" path="res://comum/inimigos/eagle/sprites/hurt/sprites/hurt1.png" id="4_7eigx"]
+[ext_resource type="Texture2D" uid="uid://bu360kvk6naw3" path="res://comum/assets/Sunny-land-files/Assets/Misc/Sunnyland FX/Sprites/enemy-death/enemy-death-1.png" id="4_lau6c"]
+[ext_resource type="Texture2D" uid="uid://cfqwxl4xu72ms" path="res://comum/assets/Sunny-land-files/Assets/Misc/Sunnyland FX/Sprites/enemy-death/enemy-death-2.png" id="5_s4lyi"]
+[ext_resource type="Texture2D" uid="uid://dnwjmfcyhkwdu" path="res://comum/inimigos/eagle/sprites/hurt/sprites/hurt2.png" id="5_w547r"]
+[ext_resource type="Texture2D" uid="uid://wckjbc0306x3" path="res://comum/inimigos/eagle/sprites/hurt/sprites/hurt3.png" id="6_7drrp"]
+[ext_resource type="Texture2D" uid="uid://cjk7knewf7bk3" path="res://comum/assets/Sunny-land-files/Assets/Misc/Sunnyland FX/Sprites/enemy-death/enemy-death-3.png" id="6_hohmw"]
+[ext_resource type="Texture2D" uid="uid://bpyrgsfl6xmk8" path="res://comum/assets/Sunny-land-files/Assets/Misc/Sunnyland FX/Sprites/enemy-death/enemy-death-4.png" id="7_g0y5t"]
+[ext_resource type="Texture2D" uid="uid://cflrs1b41ijc2" path="res://comum/inimigos/eagle/sprites/hurt/sprites/hurt4.png" id="7_wag8y"]
+[ext_resource type="Texture2D" uid="uid://chpy3f532r4y0" path="res://comum/assets/Sunny-land-files/Assets/Misc/Sunnyland FX/Sprites/enemy-death/enemy-death-5.png" id="8_cqi1q"]
+[ext_resource type="Texture2D" uid="uid://ckohuutf5pps" path="res://comum/inimigos/eagle/sprites/hurt/sprites/hurt5.png" id="8_lau6c"]
+[ext_resource type="Texture2D" uid="uid://8ybfth0f2kvm" path="res://comum/assets/Sunny-land-files/Assets/Misc/Sunnyland FX/Sprites/enemy-death/enemy-death-6.png" id="9_l8jw8"]
+[ext_resource type="Texture2D" uid="uid://dpur3lv1rsua2" path="res://comum/inimigos/eagle/sprites/hurt/sprites/hurt6.png" id="9_s4lyi"]
+[ext_resource type="Texture2D" uid="uid://npra3p4eifgq" path="res://comum/inimigos/eagle/sprites/attack/eagle-attack-1.png" id="10_hohmw"]
+[ext_resource type="Texture2D" uid="uid://50l3tclfda6k" path="res://comum/inimigos/eagle/sprites/attack/eagle-attack-2.png" id="11_g0y5t"]
+[ext_resource type="Texture2D" uid="uid://cw8ka160hbl88" path="res://comum/inimigos/eagle/sprites/attack/eagle-attack-3.png" id="12_cqi1q"]
+[ext_resource type="Texture2D" uid="uid://1lw0f0dpxoby" path="res://comum/inimigos/eagle/sprites/attack/eagle-attack-4.png" id="13_l8jw8"]
+[ext_resource type="PackedScene" uid="uid://3jsfege6lw6c" path="res://comum/prefabs/hitbox.tscn" id="15_r2wvf"]
+[ext_resource type="PackedScene" uid="uid://coom4hjor6a56" path="res://comum/prefabs/hurtbox.tscn" id="16_y3in4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qkm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_48ood")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ve51p")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lau6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s4lyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hohmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g0y5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cqi1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l8jw8")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7eigx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w547r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7drrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wag8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lau6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s4lyi")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hohmw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g0y5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cqi1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l8jw8")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yaaom"]
+radius = 7.071068
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36jtr"]
+size = Vector2(22, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smrfm"]
+size = Vector2(30, 31)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36jtr"]
+radius = 79.05694
+
+[node name="eagle" type="CharacterBody2D" unique_id=927390691 groups=["inimigos"]]
+collision_layer = 4
+collision_mask = 32
+script = ExtResource("1_48ood")
+
+[node name="anim" type="AnimatedSprite2D" parent="." unique_id=1748106437]
+position = Vector2(3, -6)
+sprite_frames = SubResource("SpriteFrames_6qkm4")
+animation = &"move"
+autoplay = "move"
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=989504358]
+shape = SubResource("CircleShape2D_yaaom")
+
+[node name="hitbox" parent="." unique_id=38914877 instance=ExtResource("15_r2wvf")]
+
+[node name="hitbox_collision" type="CollisionShape2D" parent="hitbox" unique_id=2003407905]
+shape = SubResource("RectangleShape2D_36jtr")
+
+[node name="hurtbox" parent="." unique_id=1822002903 instance=ExtResource("16_y3in4")]
+
+[node name="hurtbox_collision" type="CollisionShape2D" parent="hurtbox" unique_id=24258655]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_smrfm")
+debug_color = Color(1, 0, 0.49803922, 0.41960785)
+
+[node name="detection_area" type="Area2D" parent="." unique_id=14113302]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=1344992349]
+shape = SubResource("CircleShape2D_36jtr")
+debug_color = Color(0.5749545, 0.52861875, 0.46837807, 0.41960785)

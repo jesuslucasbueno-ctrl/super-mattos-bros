@@ -1,0 +1,303 @@
+[gd_scene format=4 uid="uid://b5vmf4pk43go4"]
+
+[ext_resource type="Texture2D" uid="uid://bvdkstkcfgnv3" path="res://tiny_biomes_desert/desert_bg_sky.png" id="1_onu7k"]
+[ext_resource type="Texture2D" uid="uid://b6cv3i0iytnm2" path="res://tiny_biomes_desert/desert_bg_dunes_01.png" id="2_s1s6j"]
+[ext_resource type="Texture2D" uid="uid://dsughyxj3f42a" path="res://tiny_biomes_desert/desert_bg_dunes_02.png" id="3_onvmd"]
+[ext_resource type="Texture2D" uid="uid://cp4dhvp3510ne" path="res://tiny_biomes_desert/desert_tileset.png" id="4_onu7k"]
+[ext_resource type="Texture2D" uid="uid://edkpmux52w0t" path="res://tiny_biomes_desert/desert_quicksand_4frames.png" id="5_1rqa4"]
+[ext_resource type="Texture2D" uid="uid://i5lgooktxgr2" path="res://tiny_biomes_desert/desert_props.png" id="6_s1s6j"]
+[ext_resource type="PackedScene" uid="uid://cqfx7yb5yxbee" path="res://demo/player.tscn" id="7_tdg64"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otloe"]
+texture = ExtResource("4_onu7k")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0/terrains_peering_bit/right_side = 0
+4:0/0/terrains_peering_bit/bottom_right_corner = 0
+4:0/0/terrains_peering_bit/bottom_side = 0
+4:0/0/terrains_peering_bit/bottom_left_corner = 0
+4:0/0/terrains_peering_bit/left_side = 0
+4:0/0/terrains_peering_bit/top_side = 0
+4:0/0/terrains_peering_bit/top_right_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrain = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0/terrains_peering_bit/right_side = 0
+4:1/0/terrains_peering_bit/bottom_right_corner = 0
+4:1/0/terrains_peering_bit/bottom_side = 0
+4:1/0/terrains_peering_bit/bottom_left_corner = 0
+4:1/0/terrains_peering_bit/left_side = 0
+4:1/0/terrains_peering_bit/top_left_corner = 0
+4:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
+0:4/0 = 0
+0:4/0/terrain_set = 0
+0:4/0/terrain = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0/terrains_peering_bit/right_side = 0
+1:4/0 = 0
+1:4/0/terrain_set = 0
+1:4/0/terrain = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0/terrains_peering_bit/right_side = 0
+1:4/0/terrains_peering_bit/left_side = 0
+2:4/0 = 0
+2:4/0/terrain_set = 0
+2:4/0/terrain = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0/terrains_peering_bit/left_side = 0
+4:4/0 = 0
+4:4/0/terrain_set = 0
+4:4/0/terrain = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_kp8sb"]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Sand"
+terrain_set_0/terrain_0/color = Color(0.9647059, 0.7921569, 0.62352943, 1)
+sources/0 = SubResource("TileSetAtlasSource_otloe")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tnph1"]
+texture = ExtResource("5_1rqa4")
+0:0/animation_speed = 3.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/terrains_peering_bit/left_side = 0
+0:1/animation_speed = 3.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/left_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSet" id="TileSet_t2m7q"]
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "quicksand 0"
+terrain_set_0/terrain_0/color = Color(0.9647059, 0.7921569, 0.62352943, 1)
+sources/0 = SubResource("TileSetAtlasSource_tnph1")
+
+[node name="Demo" type="Node2D" unique_id=2139844605]
+
+[node name="Parallax" type="Node2D" parent="." unique_id=202696052]
+
+[node name="Sky" type="Parallax2D" parent="Parallax" unique_id=1425304994]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sky" type="Sprite2D" parent="Parallax/Sky" unique_id=1376685692]
+texture = ExtResource("1_onu7k")
+centered = false
+
+[node name="Dunes1" type="Parallax2D" parent="Parallax" unique_id=1522366106]
+scroll_scale = Vector2(0.05, 0.1)
+repeat_size = Vector2(256, 0)
+
+[node name="Dunes" type="Sprite2D" parent="Parallax/Dunes1" unique_id=3204450]
+texture = ExtResource("2_s1s6j")
+centered = false
+
+[node name="Dunes2" type="Parallax2D" parent="Parallax" unique_id=1411780796]
+scroll_scale = Vector2(0.1, 0.2)
+repeat_size = Vector2(256, 0)
+
+[node name="Dunes" type="Sprite2D" parent="Parallax/Dunes2" unique_id=537441598]
+texture = ExtResource("3_onvmd")
+centered = false
+
+[node name="Tiles" type="Node2D" parent="." unique_id=275209877]
+
+[node name="Sand" type="TileMapLayer" parent="Tiles" unique_id=1578160333]
+tile_map_data = PackedByteArray("AAD4/wIAAAAAAAEAAAD4/wMAAAAAAAEAAAD5/wIAAAABAAEAAAD5/wMAAAABAAEAAAD6/wMAAAABAAEAAAD6/wQAAAABAAEAAAD5/wQAAAABAAEAAAD7/wQAAAABAAEAAAD8/wQAAAABAAEAAAD9/wQAAAACAAEAAAD7/wMAAAABAAEAAAD8/wMAAAABAAEAAAD9/wMAAAACAAEAAAD4/wQAAAAAAAEAAAACAAQAAAAAAAEAAAADAAQAAAABAAEAAAAEAAQAAAABAAEAAAAFAAQAAAACAAEAAAACAAMAAAAAAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAFAAMAAAACAAEAAAAFAAIAAAACAAEAAAAEAAIAAAABAAEAAAADAAIAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAACAAEAAAD4//r/AAAAAAEAAAD4/wEAAAAAAAEAAAD5/wEAAAAEAAEAAAD6/wEAAAABAAAAAAD6/wIAAAABAAEAAAD7/wIAAAABAAEAAAD7/wEAAAABAAAAAAD4/wAAAAAAAAEAAAD4////AAAAAAEAAAD4//7/AAAAAAEAAAD5/wAAAAACAAEAAAD5////AAACAAEAAAD5//7/AAACAAEAAAD5//3/AAACAAEAAAD5//z/AAACAAEAAAD5//v/AAACAAEAAAD5//r/AAACAAEAAAD4//v/AAAAAAEAAAD4//z/AAAAAAEAAAD4//3/AAAAAAEAAAD4/wUAAAAAAAIAAAD5/wUAAAABAAIAAAD6/wUAAAABAAIAAAD7/wUAAAABAAIAAAD8/wUAAAABAAIAAAD9/wUAAAACAAIAAAACAAUAAAAAAAIAAAADAAUAAAABAAIAAAAEAAUAAAABAAIAAAAFAAUAAAACAAIAAAD8/wIAAAABAAEAAAD8/wEAAAABAAAAAAD9/wIAAAACAAEAAAD9/wEAAAACAAAAAAACAAEAAAAAAAEAAAD5//n/AAACAAEAAAD5//j/AAACAAEAAAD5//f/AAACAAAAAAD4//f/AAAAAAAAAAD4//j/AAAAAAEAAAD4//n/AAAAAAEAAAAFAAAAAAACAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAACAAAAAAAAAAEAAAACAAIAAAAAAAEAAAACAP//AAAAAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAACAAAAAAAIAP//AAAAAAAAAAAJAP//AAABAAAAAAAKAAIAAAABAAEAAAAJAAIAAAABAAEAAAAIAAIAAAAAAAEAAAABAAIAAAABAAQAAAAAAAIAAAABAAQAAAD//wIAAAABAAQAAAAIAAUAAAAAAAIAAAAIAAQAAAAAAAEAAAAIAAMAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAAAAAAAAAEAAAAJAAAAAAABAAEAAAAJAAEAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAKAAMAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAABAAIAAAAJAAUAAAABAAIAAAAKAAEAAAABAAEAAAAKAAAAAAABAAEAAAAKAP//AAAEAAAAAAAKAP7/AAAAAAEAAAAKAP3/AAAAAAEAAAAKAPz/AAAAAAEAAAAKAPv/AAAAAAEAAAAKAPr/AAAAAAEAAAAKAPn/AAAAAAEAAAAKAPj/AAAAAAEAAAAKAPf/AAAAAAAAAAALAPf/AAACAAAAAAALAAUAAAACAAIAAAALAAQAAAACAAEAAAALAAMAAAACAAEAAAALAAIAAAACAAEAAAALAAEAAAACAAEAAAALAAAAAAACAAEAAAALAP//AAACAAEAAAALAP7/AAACAAEAAAALAP3/AAACAAEAAAALAPz/AAACAAEAAAALAPv/AAACAAEAAAALAPr/AAACAAEAAAALAPn/AAACAAEAAAALAPj/AAACAAEAAAAGAAAAAAABAAQAAAAHAAAAAAABAAQAAAAAAP//AAACAAQAAAD/////AAAAAAQAAAD+/wIAAAABAAQAAAA=")
+tile_set = SubResource("TileSet_kp8sb")
+
+[node name="Quicksand" type="TileMapLayer" parent="Tiles" unique_id=1028992703]
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAEAAAAAAAIAAAAAAAEAAAD//wIAAAAAAAEAAAAHAAEAAAAAAAAAAAABAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAAMAAAAAAAEAAAAGAAUAAAAAAAEAAAAGAAQAAAAAAAEAAAAGAAMAAAAAAAEAAAAGAAIAAAAAAAEAAAAGAAEAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAUAAAAAAAEAAAD//wUAAAAAAAEAAAD//wMAAAAAAAEAAAD//wQAAAAAAAEAAAAHAAIAAAAAAAEAAAAHAAMAAAAAAAEAAAAHAAUAAAAAAAEAAAAHAAQAAAAAAAEAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAEAAAD+/wMAAAAAAAEAAAD+/wQAAAAAAAEAAAD+/wUAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_t2m7q")
+
+[node name="Props" type="Node2D" parent="." unique_id=451504896]
+
+[node name="DesertProps" type="Sprite2D" parent="Props" unique_id=321834550]
+position = Vector2(63, -44)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 4, 24, 28)
+
+[node name="DesertProps5" type="Sprite2D" parent="Props" unique_id=438958868]
+position = Vector2(133, -22)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(40, 42, 18, 6)
+
+[node name="DesertProps9" type="Sprite2D" parent="Props" unique_id=1225312213]
+position = Vector2(41, -22)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(40, 42, 18, 6)
+
+[node name="DesertProps3" type="Sprite2D" parent="Props" unique_id=1479957050]
+position = Vector2(-8, -33)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(69, 15, 23, 17)
+
+[node name="DesertProps10" type="Sprite2D" parent="Props" unique_id=678975416]
+position = Vector2(137, -33)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(69, 15, 23, 17)
+
+[node name="DesertProps4" type="Sprite2D" parent="Props" unique_id=143033227]
+position = Vector2(-83, 7)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 39, 24, 9)
+
+[node name="DesertProps12" type="Sprite2D" parent="Props" unique_id=650391295]
+position = Vector2(96, -9)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 39, 24, 9)
+
+[node name="DesertProps7" type="Sprite2D" parent="Props" unique_id=1216247315]
+position = Vector2(-96, 4)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(96, 36, 16, 12)
+
+[node name="DesertProps8" type="Sprite2D" parent="Props" unique_id=1135287989]
+position = Vector2(112, -12)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(96, 36, 16, 12)
+
+[node name="DesertProps2" type="Sprite2D" parent="Props" unique_id=1597285817]
+position = Vector2(-57, -16)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(36, 0, 24, 32)
+
+[node name="DesertProps6" type="Sprite2D" parent="Props" unique_id=1391601929]
+position = Vector2(-62, 5)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(64, 37, 16, 11)
+
+[node name="DesertProps11" type="Sprite2D" parent="Props" unique_id=1225020101]
+position = Vector2(75, -28)
+texture = ExtResource("6_s1s6j")
+centered = false
+region_enabled = true
+region_rect = Rect2(96, 36, 16, 12)
+
+[node name="Player" parent="." unique_id=1265295115 instance=ExtResource("7_tdg64")]
+position = Vector2(50, -31)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=286344503]
+limit_left = -128
+limit_top = -128
+limit_right = 192
+limit_bottom = 80
+limit_smoothed = true
+position_smoothing_enabled = true

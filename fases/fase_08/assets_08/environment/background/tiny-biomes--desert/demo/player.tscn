@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqfx7yb5yxbee"]
+
+[ext_resource type="Script" uid="uid://cwbvil6p5a7xr" path="res://demo/player.gd" id="1_joasj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joasj"]
+size = Vector2(12, 20)
+
+[node name="Player" type="CharacterBody2D" unique_id=1265295115]
+script = ExtResource("1_joasj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=226501942]
+shape = SubResource("RectangleShape2D_joasj")
+
+[node name="Panel" type="Panel" parent="." unique_id=194175287]
+offset_left = -6.0
+offset_top = -10.0
+offset_right = 6.0
+offset_bottom = 10.0

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://d4iblykqtox3c"]
+
+[ext_resource type="Texture2D" uid="uid://cxtiyghkjyi1u" path="res://fases/fase_07/tilesets_07/tilset-cave.png" id="1_qdwcb"]
+[ext_resource type="Script" uid="uid://cowphewmotakg" path="res://fases/fase_07/assets_07/point_light.gd" id="2_mue5i"]
+
+[sub_resource type="Gradient" id="Gradient_eyu8h"]
+colors = PackedColorArray(0.5019608, 0.972549, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_36jtr"]
+gradient = SubResource("Gradient_eyu8h")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.7821782, 0.14851485)
+
+[node name="crystal_formation" type="Node2D" unique_id=660686012]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862477678]
+texture_filter = 2
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_qdwcb")
+region_enabled = true
+region_rect = Rect2(64, 384, 128, 128)
+
+[node name="Sparkles" type="Node2D" parent="." unique_id=1112007072]
+
+[node name="PointLight2D" type="PointLight2D" parent="Sparkles" unique_id=1001467080]
+position = Vector2(8, -6)
+scale = Vector2(0.25, 0.25)
+energy = 0.7363702
+texture = SubResource("GradientTexture2D_36jtr")
+script = ExtResource("2_mue5i")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Sparkles" unique_id=1544705588]
+position = Vector2(-7.59729, -14.619015)
+scale = Vector2(0.25, 0.25)
+energy = 0.79717594
+texture = SubResource("GradientTexture2D_36jtr")
+script = ExtResource("2_mue5i")
+energia_minima = 0.35
+energia_maxima = 1.1
+velocidade = 2.1
+suavidade = 0.333
+
+[node name="PointLight2D3" type="PointLight2D" parent="Sparkles" unique_id=253650254]
+position = Vector2(-3.351677, -25.509937)
+scale = Vector2(0.25, 0.25)
+energy = 0.69932514
+texture = SubResource("GradientTexture2D_36jtr")
+script = ExtResource("2_mue5i")
+energia_minima = 0.35
+energia_maxima = 1.1
+velocidade = 3.3
+
+[node name="PointLight2D4" type="PointLight2D" parent="Sparkles" unique_id=942868196]
+position = Vector2(-14, -21)
+scale = Vector2(0.25, 0.25)
+energy = 0.7133133
+texture = SubResource("GradientTexture2D_36jtr")
+script = ExtResource("2_mue5i")
+energia_minima = 0.35
+energia_maxima = 1.1
+velocidade = 1.8
+
+[node name="PointLight2D5" type="PointLight2D" parent="Sparkles" unique_id=1291085102]
+position = Vector2(-9.654518, -12.238628)
+scale = Vector2(0.25, 0.25)
+energy = 0.59571564
+texture = SubResource("GradientTexture2D_36jtr")
+script = ExtResource("2_mue5i")
+energia_minima = 0.35
+energia_maxima = 1.1
+velocidade = 3.5

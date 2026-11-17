@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://dymqtnpvtakch"]
+
+[ext_resource type="Texture2D" uid="uid://dai6obmpbfbv0" path="res://fase_08/enemies_08/skeleton/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Attack.png" id="1_mjk1q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k36im"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q548d"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(0, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf1m8"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(43, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mkwv"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(86, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8qpi"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(129, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrja7"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(172, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uco7g"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(215, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufvna"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(258, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7um3"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(301, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjnlj"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(344, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pupm"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(387, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfwad"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(430, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4mvb"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(473, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_610c0"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(516, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5hql"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(559, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ojdc"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(602, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjvih"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(645, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p1ne"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(688, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awyo4"]
+atlas = ExtResource("1_mjk1q")
+region = Rect2(731, 0, 43, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nkle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q548d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf1m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mkwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8qpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrja7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uco7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufvna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7um3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjnlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pupm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfwad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4mvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_610c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5hql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ojdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjvih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p1ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awyo4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Skeleton" type="CharacterBody2D" unique_id=429321226]
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=120284742]
+shape = SubResource("CircleShape2D_k36im")
+
+[node name="anim" type="AnimatedSprite2D" parent="." unique_id=1963800989]
+sprite_frames = SubResource("SpriteFrames_2nkle")
+frame_progress = 0.79131943

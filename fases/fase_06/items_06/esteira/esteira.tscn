@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fases/fase_06/items_06/esteira/esteira.gd" id="1_esteira"]
+
+[node name="esteira" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_esteira")
+
+[node name="colisao" type="CollisionShape2D" parent="."]
