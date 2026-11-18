@@ -3,6 +3,11 @@
 [ext_resource type="Script" path="res://fases/fase_06/items_06/chave/chave.gd" id="1_chave"]
 [ext_resource type="Texture2D" path="res://comum/cenas/selecao_fases/card_fase/chave.png" id="2_chave"]
 
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/chave.ogg" id="3_som"]
+
+[sub_resource type="Gradient" id="Gradient_brilho"]
+colors = PackedColorArray(1, 0.9, 0.4, 1, 1, 0.7, 0.2, 0)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_chave"]
 radius = 12.0
 
@@ -17,3 +22,21 @@ shape = SubResource("CircleShape2D_chave")
 [node name="sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_chave")
+
+[node name="som" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_som")
+volume_db = -2.0
+
+[node name="brilho" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 28
+lifetime = 0.9
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 40.0
+initial_velocity_max = 110.0
+scale_amount_min = 2.0
+scale_amount_max = 3.5
+color_ramp = SubResource("Gradient_brilho")

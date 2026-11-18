@@ -21,6 +21,10 @@ var _deslocamento: float = 0.0
 
 func _ready() -> void:
 	_atualizar()
+	if not Engine.is_editor_hint():
+		var som := $som as AudioStreamPlayer2D
+		som.finished.connect(som.play)   # repete o som enquanto a cena existir
+		som.play()
 
 
 func _atualizar() -> void:
@@ -34,6 +38,7 @@ func _atualizar() -> void:
 	colisao.position = Vector2(largura / 2.0, ALTURA / 2.0)
 
 	constant_linear_velocity = Vector2(velocidade, 0.0)
+	($som as AudioStreamPlayer2D).position = Vector2(largura / 2.0, ALTURA / 2.0)
 	queue_redraw()
 
 

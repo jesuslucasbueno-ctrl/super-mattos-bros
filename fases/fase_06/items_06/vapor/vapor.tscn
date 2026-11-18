@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://fases/fase_06/items_06/vapor/vapor.gd" id="1_vapor"]
 [ext_resource type="Script" path="res://comum/items/spikes/spikes.gd" id="2_dano"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/vapor_jato.ogg" id="3_jato"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/vapor_chiado.ogg" id="4_chiado"]
 
 [sub_resource type="Gradient" id="Gradient_vapor"]
 colors = PackedColorArray(0.92, 0.95, 1, 0.75, 0.8, 0.85, 0.95, 0)
@@ -58,3 +60,14 @@ initial_velocity_max = 106.0
 scale_amount_min = 3.0
 scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_vapor")
+
+[node name="som_jato" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -20)
+stream = ExtResource("3_jato")
+volume_db = -5.0
+max_distance = 260.0
+
+[node name="som_chiado" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_chiado")
+volume_db = -9.0
+max_distance = 200.0

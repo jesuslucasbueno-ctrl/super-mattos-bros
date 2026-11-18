@@ -1,0 +1,343 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fases/fase_06/items_06/esqueleto/esqueleto.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://fases/fase_08/enemies_08/skeleton/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Walk.png" id="2_walk"]
+[ext_resource type="Texture2D" path="res://fases/fase_08/enemies_08/skeleton/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Hit.png" id="3_hit"]
+[ext_resource type="Texture2D" path="res://fases/fase_08/enemies_08/skeleton/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Dead.png" id="4_dead"]
+[ext_resource type="PackedScene" path="res://comum/prefabs/hitbox.tscn" id="5_hitbox"]
+[ext_resource type="PackedScene" path="res://comum/prefabs/hurtbox.tscn" id="6_hurtbox"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/esqueleto_dano.ogg" id="7_dano"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/esqueleto_morte.ogg" id="8_morte"]
+
+[sub_resource type="AtlasTexture" id="w_0"]
+atlas = ExtResource("2_walk")
+region = Rect2(0, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_1"]
+atlas = ExtResource("2_walk")
+region = Rect2(22, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_2"]
+atlas = ExtResource("2_walk")
+region = Rect2(44, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_3"]
+atlas = ExtResource("2_walk")
+region = Rect2(66, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_4"]
+atlas = ExtResource("2_walk")
+region = Rect2(88, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_5"]
+atlas = ExtResource("2_walk")
+region = Rect2(110, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_6"]
+atlas = ExtResource("2_walk")
+region = Rect2(132, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_7"]
+atlas = ExtResource("2_walk")
+region = Rect2(154, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_8"]
+atlas = ExtResource("2_walk")
+region = Rect2(176, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_9"]
+atlas = ExtResource("2_walk")
+region = Rect2(198, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_10"]
+atlas = ExtResource("2_walk")
+region = Rect2(220, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_11"]
+atlas = ExtResource("2_walk")
+region = Rect2(242, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="w_12"]
+atlas = ExtResource("2_walk")
+region = Rect2(264, 0, 22, 33)
+
+[sub_resource type="AtlasTexture" id="h_0"]
+atlas = ExtResource("3_hit")
+region = Rect2(0, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_1"]
+atlas = ExtResource("3_hit")
+region = Rect2(30, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_2"]
+atlas = ExtResource("3_hit")
+region = Rect2(60, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_3"]
+atlas = ExtResource("3_hit")
+region = Rect2(90, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_4"]
+atlas = ExtResource("3_hit")
+region = Rect2(120, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_5"]
+atlas = ExtResource("3_hit")
+region = Rect2(150, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_6"]
+atlas = ExtResource("3_hit")
+region = Rect2(180, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="h_7"]
+atlas = ExtResource("3_hit")
+region = Rect2(210, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="d_0"]
+atlas = ExtResource("4_dead")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_1"]
+atlas = ExtResource("4_dead")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_2"]
+atlas = ExtResource("4_dead")
+region = Rect2(66, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_3"]
+atlas = ExtResource("4_dead")
+region = Rect2(99, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_4"]
+atlas = ExtResource("4_dead")
+region = Rect2(132, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_5"]
+atlas = ExtResource("4_dead")
+region = Rect2(165, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_6"]
+atlas = ExtResource("4_dead")
+region = Rect2(198, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_7"]
+atlas = ExtResource("4_dead")
+region = Rect2(231, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_8"]
+atlas = ExtResource("4_dead")
+region = Rect2(264, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_9"]
+atlas = ExtResource("4_dead")
+region = Rect2(297, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_10"]
+atlas = ExtResource("4_dead")
+region = Rect2(330, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_11"]
+atlas = ExtResource("4_dead")
+region = Rect2(363, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_12"]
+atlas = ExtResource("4_dead")
+region = Rect2(396, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_13"]
+atlas = ExtResource("4_dead")
+region = Rect2(429, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="d_14"]
+atlas = ExtResource("4_dead")
+region = Rect2(462, 0, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("w_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_11")
+}, {
+"duration": 1.0,
+"texture": SubResource("w_12")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("h_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("h_7")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("d_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_11")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_12")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_13")
+}, {
+"duration": 1.0,
+"texture": SubResource("d_14")
+}],
+"loop": false,
+"name": &"death",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_corpo"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hit"]
+size = Vector2(20, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurt"]
+size = Vector2(24, 24)
+
+[node name="esqueleto" type="CharacterBody2D" groups=["inimigos"]]
+collision_layer = 4
+floor_max_angle = 1.0471976
+script = ExtResource("1_script")
+speed = 42.0
+turn_time = 4.0
+max_health = 2
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_esq")
+animation = &"move"
+autoplay = "move"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_corpo")
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="hitbox" parent="." instance=ExtResource("5_hitbox")]
+damage = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_hit")
+
+[node name="hurtbox" parent="." instance=ExtResource("6_hurtbox")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_hurt")
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+target_position = Vector2(-18, -4)
+
+[node name="floor_detector" type="RayCast2D" parent="."]
+position = Vector2(-10, -20)
+
+[node name="som_dano" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_dano")
+volume_db = -4.0
+max_distance = 280.0
+
+[node name="som_morte" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_morte")
+volume_db = -2.0
+max_distance = 300.0
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

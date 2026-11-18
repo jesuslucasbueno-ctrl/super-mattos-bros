@@ -12,6 +12,8 @@ extends Node2D
 @onready var colisao: CollisionShape2D = $dano/colisao
 @onready var jato: CPUParticles2D = $jato
 @onready var chiado: CPUParticles2D = $chiado
+@onready var som_jato: AudioStreamPlayer2D = $som_jato
+@onready var som_chiado: AudioStreamPlayer2D = $som_chiado
 
 
 func _ready() -> void:
@@ -39,11 +41,13 @@ func _ciclo() -> void:
 		await get_tree().create_timer(tempo_desligado).timeout
 
 		chiado.emitting = true
+		som_chiado.play()
 		await get_tree().create_timer(tempo_aviso).timeout
 
 		chiado.emitting = false
 		jato.emitting = true
 		dano.monitoring = true
+		som_jato.play()
 		await get_tree().create_timer(tempo_ligado).timeout
 
 		jato.emitting = false

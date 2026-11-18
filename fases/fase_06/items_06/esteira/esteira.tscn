@@ -1,9 +1,15 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://fases/fase_06/items_06/esteira/esteira.gd" id="1_esteira"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/esteira_loop.ogg" id="2_som"]
 
 [node name="esteira" type="StaticBody2D"]
 collision_mask = 2
 script = ExtResource("1_esteira")
 
 [node name="colisao" type="CollisionShape2D" parent="."]
+
+[node name="som" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_som")
+volume_db = -9.0
+max_distance = 230.0

@@ -18,13 +18,13 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 Globals="*uid://bqvle5u2ba07q"
 Progresso="*uid://c2si3x8nyjiit"
+Tela="*res://comum/singletons/tela.gd"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=450
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor]
 

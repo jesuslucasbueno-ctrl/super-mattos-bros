@@ -13,6 +13,10 @@ extends Node2D
 @onready var haste: ColorRect = $haste
 @onready var dano: Area2D = $cabeca/dano
 @onready var faiscas: CPUParticles2D = $cabeca/faiscas
+@onready var poeira: CPUParticles2D = $cabeca/poeira
+@onready var alerta: PointLight2D = $alerta
+@onready var som_aviso: AudioStreamPlayer2D = $som_aviso
+@onready var som_batida: AudioStreamPlayer2D = $som_batida
 
 
 func _ready() -> void:
@@ -39,6 +43,11 @@ func _ciclo() -> void:
 
 
 func _avisar() -> void:
+	som_aviso.play()
+	var pisca := create_tween()
+	for i in int(tempo_aviso / 0.16):
+		pisca.tween_property(alerta, "energy", 1.8, 0.06)
+		pisca.tween_property(alerta, "energy", 0.0, 0.1)
 	var tween := create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(cabeca, "modulate", Color(1.6, 0.55, 0.45), tempo_aviso)
@@ -61,6 +70,10 @@ func _esmagar() -> void:
 	await tween.finished
 	faiscas.restart()
 	faiscas.emitting = true
+	poeira.restart()
+	poeira.emitting = true
+	som_batida.play()
+	_tremer_camera()
 
 
 func _subir() -> void:
@@ -77,3 +90,22 @@ func _on_dano_acertou(area: Area2D) -> void:
 	# Um golpe causa dano uma única vez (o knockback jogaria o player de volta na zona).
 	if area is Hurtbox and area.get_parent().is_in_group("player"):
 		dano.set_deferred("monitoring", false)
+
+
+func _tremer_camera() -> void:
+	# Treme a câmera quando a prensa bate perto do jogador (mais forte quanto mais perto).
+	var camera := get_viewport().get_camera_2d()
+	if camera == null:
+		return
+
+	var alcance := 320.0
+	var distancia := camera.get_screen_center_position().distance_to(cabeca.global_position)
+	if distancia > alcance:
+		return
+
+	var forca := lerpf(4.0, 0.8, distancia / alcance)
+	var tween := create_tween()
+	for i in 6:
+		var direcao := Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0))
+		tween.tween_property(camera, "offset", direcao * forca * (1.0 - i / 6.0), 0.035)
+	tween.tween_property(camera, "offset", Vector2.ZERO, 0.04)

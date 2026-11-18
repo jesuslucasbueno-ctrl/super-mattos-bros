@@ -2,6 +2,23 @@
 
 [ext_resource type="Script" path="res://fases/fase_06/items_06/prensa/prensa.gd" id="1_prensa"]
 [ext_resource type="Script" path="res://comum/items/spikes/spikes.gd" id="2_dano"]
+[ext_resource type="Texture2D" path="res://fases/fase_06/assets_06/props/sirene.png" id="3_sirene"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/prensa_aviso.ogg" id="4_aviso"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/prensa_batida.ogg" id="5_batida"]
+
+[sub_resource type="Gradient" id="Gradient_alerta"]
+colors = PackedColorArray(1, 0.35, 0.25, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_alerta"]
+gradient = SubResource("Gradient_alerta")
+width = 64
+height = 64
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_poeira"]
+colors = PackedColorArray(0.75, 0.7, 0.68, 0.7, 0.5, 0.48, 0.46, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dano"]
 size = Vector2(28, 6)
@@ -68,3 +85,40 @@ initial_velocity_max = 130.0
 scale_amount_min = 1.5
 scale_amount_max = 2.5
 color = Color(1, 0.75, 0.3, 1)
+
+[node name="poeira" type="CPUParticles2D" parent="cabeca"]
+position = Vector2(0, 14)
+emitting = false
+amount = 12
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.9
+direction = Vector2(1, -0.3)
+spread = 180.0
+gravity = Vector2(0, -8)
+initial_velocity_min = 18.0
+initial_velocity_max = 45.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_poeira")
+
+[node name="sirene" type="Sprite2D" parent="."]
+position = Vector2(14, -8)
+texture = ExtResource("3_sirene")
+
+[node name="alerta" type="PointLight2D" parent="."]
+position = Vector2(14, -6)
+energy = 0.0
+texture = SubResource("GradientTexture2D_alerta")
+texture_scale = 2.4
+
+[node name="som_aviso" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_aviso")
+volume_db = -6.0
+max_distance = 320.0
+
+[node name="som_batida" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 60)
+stream = ExtResource("5_batida")
+volume_db = -2.0
+max_distance = 360.0
