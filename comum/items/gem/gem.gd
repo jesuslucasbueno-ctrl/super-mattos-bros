@@ -5,6 +5,7 @@ extends RigidBody2D
 func _on_player_detector_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		Globals.gems += 1
+		Sons.tocar("gema")
 		anim.play("collect")
 
 func _on_anim_animation_finished() -> void:

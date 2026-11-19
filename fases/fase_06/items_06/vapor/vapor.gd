@@ -3,10 +3,10 @@ extends Node2D
 ## Ciclo: desligado -> aviso (chiado fraco) -> jato (causa dano).
 
 @export var atraso_inicial: float = 0.0
-@export var tempo_desligado: float = 1.8
+@export var tempo_desligado: float = 2.4
 @export var tempo_aviso: float = 0.6
-@export var tempo_ligado: float = 1.2
-@export var comprimento: float = 48.0
+@export var tempo_ligado: float = 0.8
+@export var comprimento: float = 38.0
 
 @onready var dano: Area2D = $dano
 @onready var colisao: CollisionShape2D = $dano/colisao
@@ -18,7 +18,7 @@ extends Node2D
 
 func _ready() -> void:
 	var forma := RectangleShape2D.new()
-	forma.size = Vector2(12.0, comprimento)
+	forma.size = Vector2(9.0, comprimento)
 	colisao.shape = forma
 	colisao.position = Vector2(0.0, -comprimento / 2.0 - 2.0)
 

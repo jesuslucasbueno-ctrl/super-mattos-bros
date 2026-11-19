@@ -64,11 +64,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and not taking_damage:
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			Sons.tocar("pulo")
 		elif wall_direction != 0 and wall_jump_time <= 0.0:
 			velocity.y = JUMP_VELOCITY
 			velocity.x = wall_direction * WALL_JUMP_SPEED
 			wall_jump_time = WALL_JUMP_DURATION
 			wall_sliding = false
+			Sons.tocar("pulo", -2.0, 1.25)
 
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y = velocity.y/5
@@ -82,7 +84,11 @@ func _physics_process(delta: float) -> void:
 		velocity = knockback_vector
 		wall_jump_time = 0.0
 		wall_sliding = false
+	var estava_no_ar := not is_on_floor()
+	var velocidade_queda := velocity.y
 	move_and_slide()
+	if estava_no_ar and is_on_floor() and velocidade_queda > 140.0:
+		Sons.tocar("aterrissar", -4.0)
 	if is_on_floor():
 		wall_sliding = false
 	update_state(direction)
@@ -113,6 +119,7 @@ func update_state(direction) -> void:
 		anim.advance(0)
 	
 func atirar() -> void:
+	Sons.tocar("tiro")
 	var projetil = projetil_scene.instantiate()
 
 	if sprite.flip_h:
@@ -126,6 +133,7 @@ func atirar() -> void:
 	get_tree().current_scene.add_child(projetil)
 	
 func _on_damage_received(amount:int, knockback: Vector2) -> void:
+	Sons.tocar("dano_jogador")
 	knockback_vector = knockback
 	if knockback != Vector2.ZERO and hurt_duration > 0.0:
 		knockback_timer.start(hurt_duration)
@@ -133,7 +141,7 @@ func _on_damage_received(amount:int, knockback: Vector2) -> void:
 		knockback_timer.stop()
 		_on_knockback_timer_timeout()
 	if Globals.player_life <=1:
-		get_tree().call_deferred("change_scene_to_file","res://comum/cenas/selecao_fases/selecao_fases.tscn")
+		Checkpoint.reaparecer(get_tree())
 	else:
 		Globals.player_life -= amount
 	if knockback != Vector2.ZERO:
@@ -145,7 +153,7 @@ func _on_knockback_timer_timeout() -> void:
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == &"die":
-		get_tree().call_deferred("change_scene_to_file","res://comum/cenas/selecao_fases/selecao_fases.tscn")
+		Checkpoint.reaparecer(get_tree())
 		
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
@@ -157,7 +165,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	var limite_inferior = camera.get_screen_center_position().y + get_viewport_rect().size.y / (2.0 * camera.zoom.y)
 
 	if global_position.y > limite_inferior:
-		get_tree().call_deferred(
-			"change_scene_to_file",
-			"res://comum/cenas/selecao_fases/selecao_fases.tscn"
-		)
+		Checkpoint.reaparecer(get_tree())

@@ -87,6 +87,7 @@ func _ready() -> void:
 	Globals.player_life = Globals.max_life
 	Globals.cherries = 0
 	Globals.gems = 0
+	Checkpoint.limpar()
 	
 	criar_cards()
 	

@@ -330,11 +330,13 @@ target_position = Vector2(-18, -4)
 position = Vector2(-10, -20)
 
 [node name="som_dano" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
 stream = ExtResource("7_dano")
 volume_db = -4.0
 max_distance = 280.0
 
 [node name="som_morte" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
 stream = ExtResource("8_morte")
 volume_db = -2.0
 max_distance = 300.0

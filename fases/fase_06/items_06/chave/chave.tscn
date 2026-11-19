@@ -24,6 +24,7 @@ scale = Vector2(0.22, 0.22)
 texture = ExtResource("2_chave")
 
 [node name="som" type="AudioStreamPlayer" parent="."]
+bus = &"Efeitos"
 stream = ExtResource("3_som")
 volume_db = -2.0
 

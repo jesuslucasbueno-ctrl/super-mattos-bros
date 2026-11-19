@@ -25,6 +25,7 @@ func _ready() -> void:
 	_som = AudioStreamPlayer2D.new()
 	_som.stream = load("res://fases/fase_06/sfx_06/faisca.ogg")
 	_som.volume_db = -8.0
+	_som.bus = &"Efeitos"
 	_som.max_distance = 240.0
 	add_child(_som)
 	_ciclo()

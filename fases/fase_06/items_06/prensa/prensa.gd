@@ -8,6 +8,8 @@ extends Node2D
 @export var tempo_aviso: float = 0.5
 @export var tempo_embaixo: float = 0.35
 @export var tempo_subida: float = 0.9
+## Quanto da haste aparece acima da cabeça parada (curto, para não atravessar o teto).
+@export var comprimento_haste: float = 8.0
 
 @onready var cabeca: Node2D = $cabeca
 @onready var haste: ColorRect = $haste
@@ -22,12 +24,13 @@ extends Node2D
 func _ready() -> void:
 	dano.monitoring = false
 	dano.area_entered.connect(_on_dano_acertou)
+	haste.position.y = -comprimento_haste
 	_ciclo()
 
 
 func _process(_delta: float) -> void:
 	# A haste acompanha a cabeça para parecer um pistão contínuo.
-	haste.size.y = 200.0 + cabeca.position.y + 2.0
+	haste.size.y = comprimento_haste + cabeca.position.y + 2.0
 
 
 func _ciclo() -> void:

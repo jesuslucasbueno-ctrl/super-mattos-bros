@@ -71,6 +71,7 @@ func _on_body_entered(_body: Node2D) -> void:
 	coletada = true
 	contorno_neon.material.set_shader_parameter("ativo", false)
 	Globals.cherries += 1
+	Sons.tocar("cereja")
 	collision.set_deferred("disabled", true)
 	anim.play("collect")
 

@@ -8,8 +8,11 @@
 [sub_resource type="Gradient" id="Gradient_vapor"]
 colors = PackedColorArray(0.92, 0.95, 1, 0.75, 0.8, 0.85, 0.95, 0)
 
+[sub_resource type="Gradient" id="Gradient_chiado"]
+colors = PackedColorArray(0.85, 0.9, 1, 0.3, 0.8, 0.85, 0.95, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vapor"]
-size = Vector2(12, 48)
+size = Vector2(9, 38)
 
 [node name="vapor" type="Node2D"]
 script = ExtResource("1_vapor")
@@ -27,7 +30,7 @@ collision_layer = 16
 collision_mask = 32
 script = ExtResource("2_dano")
 damage = 1
-knockback_force = Vector2(0, -260)
+knockback_force = Vector2(0, -170)
 
 [node name="colisao" type="CollisionShape2D" parent="dano"]
 position = Vector2(0, -26)
@@ -36,16 +39,16 @@ shape = SubResource("RectangleShape2D_vapor")
 [node name="chiado" type="CPUParticles2D" parent="."]
 position = Vector2(0, -5)
 emitting = false
-amount = 6
-lifetime = 0.5
+amount = 7
+lifetime = 0.8
 direction = Vector2(0, -1)
-spread = 20.0
-gravity = Vector2(0, -10)
-initial_velocity_min = 12.0
-initial_velocity_max = 24.0
-scale_amount_min = 2.0
-scale_amount_max = 3.0
-color_ramp = SubResource("Gradient_vapor")
+spread = 50.0
+gravity = Vector2(0, -3)
+initial_velocity_min = 6.0
+initial_velocity_max = 20.0
+scale_amount_min = 1.5
+scale_amount_max = 3.5
+color_ramp = SubResource("Gradient_chiado")
 
 [node name="jato" type="CPUParticles2D" parent="."]
 position = Vector2(0, -5)
@@ -62,12 +65,14 @@ scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_vapor")
 
 [node name="som_jato" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
 position = Vector2(0, -20)
 stream = ExtResource("3_jato")
 volume_db = -5.0
 max_distance = 260.0
 
 [node name="som_chiado" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
 stream = ExtResource("4_chiado")
 volume_db = -9.0
 max_distance = 200.0

@@ -16,10 +16,13 @@
 [ext_resource type="PackedScene" path="res://fases/fase_06/items_06/chave/chave.tscn" id="chave"]
 [ext_resource type="Script" path="res://fases/fase_06/items_06/luz_piscante.gd" id="luz_gd"]
 [ext_resource type="Script" path="res://fases/fase_06/items_06/girar.gd" id="girar_gd"]
+[ext_resource type="PackedScene" path="res://comum/items/checkpoint/checkpoint.tscn" id="checkpoint"]
+[ext_resource type="Script" path="res://fases/fase_06/items_06/gerenciador_checkpoints.gd" id="gerenciador_gd"]
 [ext_resource type="Script" path="res://fases/fase_06/items_06/musica.gd" id="musica_gd"]
 [ext_resource type="Script" path="res://fases/fase_06/items_06/faiscas_lampada.gd" id="faisca_gd"]
 [ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/musica_fabrica.ogg" id="musica_ogg"]
 [ext_resource type="PackedScene" path="res://fases/fase_06/items_06/esqueleto/esqueleto.tscn" id="esqueleto"]
+[ext_resource type="PackedScene" path="res://fases/fase_06/items_06/triturador/triturador.tscn" id="triturador"]
 [ext_resource type="Texture2D" path="res://fases/fase_06/assets_06/props/engrenagem_16.png" id="tex_engrenagem_16"]
 [ext_resource type="Texture2D" path="res://fases/fase_06/assets_06/props/engrenagem_32.png" id="tex_engrenagem_32"]
 [ext_resource type="Texture2D" path="res://fases/fase_06/assets_06/props/engrenagem_64.png" id="tex_engrenagem_64"]
@@ -395,6 +398,7 @@ color = Color(0.64, 0.6, 0.68, 1)
 [node name="musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("musica_ogg")
 volume_db = -9.0
+bus = &"Musica"
 script = ExtResource("musica_gd")
 
 [node name="vinheta" type="CanvasLayer" parent="."]
@@ -3647,42 +3651,74 @@ turn_time = 3.5
 [node name="drone1" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(1850, 70)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone2" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(3300, 200)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone3" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(2350, 120)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone4" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
-position = Vector2(4144, 150)
+position = Vector2(4944, 200)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone5" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
-position = Vector2(4944, 200)
+position = Vector2(5200, 150)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone6" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
-position = Vector2(5200, 150)
+position = Vector2(6880, 50)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone7" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
-position = Vector2(6880, 50)
+position = Vector2(7120, 100)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone8" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
-position = Vector2(7120, 100)
+position = Vector2(8368, 190)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="drone9" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
-position = Vector2(8368, 190)
-
-[node name="drone10" parent="enemies" instance=ExtResource("eagle")]
-modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(8656, 220)
+speed = 100.0
+dive_speed = 280.0
+attack_cooldown = 4.5
+patrol_distance = 130.0
 
 [node name="chave" parent="." instance=ExtResource("chave")]
 position = Vector2(8984, 254)
@@ -4193,8 +4229,53 @@ energia_minima = 0.3
 energia_maxima = 1.1
 velocidade = 2.9
 
+[node name="checkpoints" type="Node2D" parent="."]
+script = ExtResource("gerenciador_gd")
+
+[node name="checkpoint1" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(1048, 304)
+indice = 0
+
+[node name="checkpoint2" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(1432, 304)
+indice = 1
+
+[node name="checkpoint3" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(1608, 96)
+indice = 2
+
+[node name="checkpoint4" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(2168, 304)
+indice = 3
+
+[node name="checkpoint5" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(3704, 304)
+indice = 4
+
+[node name="checkpoint6" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(5544, 304)
+indice = 5
+
+[node name="checkpoint7" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(6520, 304)
+indice = 6
+
+[node name="checkpoint8" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(7400, 304)
+indice = 7
+
+[node name="checkpoint9" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(8104, 304)
+indice = 8
+
+[node name="checkpoint10" parent="checkpoints" instance=ExtResource("checkpoint")]
+position = Vector2(8856, 304)
+indice = 9
+
 [node name="player" parent="." instance=ExtResource("player")]
 position = Vector2(72, 296)
+
+[node name="triturador" parent="." instance=ExtResource("triturador")]
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(72, 296)

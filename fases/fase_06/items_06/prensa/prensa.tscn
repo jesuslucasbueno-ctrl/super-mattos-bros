@@ -28,7 +28,7 @@ script = ExtResource("1_prensa")
 
 [node name="haste" type="ColorRect" parent="."]
 offset_left = -4.0
-offset_top = -200.0
+offset_top = 0.0
 offset_right = 4.0
 offset_bottom = 2.0
 color = Color(0.45, 0.48, 0.55, 1)
@@ -113,11 +113,13 @@ texture = SubResource("GradientTexture2D_alerta")
 texture_scale = 2.4
 
 [node name="som_aviso" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
 stream = ExtResource("4_aviso")
 volume_db = -6.0
 max_distance = 320.0
 
 [node name="som_batida" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
 position = Vector2(0, 60)
 stream = ExtResource("5_batida")
 volume_db = -2.0

@@ -1,0 +1,175 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fases/fase_06/items_06/triturador/triturador.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://fases/fase_06/items_06/triturador/triturador_corpo.png" id="2_corpo"]
+[ext_resource type="Texture2D" path="res://fases/fase_06/assets_06/props/engrenagem_64.png" id="3_g64"]
+[ext_resource type="Texture2D" path="res://fases/fase_06/assets_06/props/engrenagem_32.png" id="4_g32"]
+[ext_resource type="Script" path="res://fases/fase_06/items_06/girar.gd" id="5_girar"]
+[ext_resource type="PackedScene" path="res://comum/prefabs/hitbox.tscn" id="6_hitbox"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/triturador_rugido.ogg" id="7_rugido"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/alarme.ogg" id="8_alarme"]
+[ext_resource type="AudioStream" path="res://fases/fase_06/sfx_06/mastigar.ogg" id="9_mastigar"]
+
+[sub_resource type="Gradient" id="Gradient_olho"]
+colors = PackedColorArray(1, 0.25, 0.15, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_olho"]
+gradient = SubResource("Gradient_olho")
+width = 64
+height = 64
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_fumaca"]
+colors = PackedColorArray(0.25, 0.23, 0.26, 0.8, 0.12, 0.11, 0.13, 0)
+
+[sub_resource type="Gradient" id="Gradient_poeira"]
+colors = PackedColorArray(0.55, 0.45, 0.4, 0.85, 0.3, 0.26, 0.24, 0)
+
+[sub_resource type="Gradient" id="Gradient_faisca"]
+colors = PackedColorArray(1, 0.85, 0.4, 1, 1, 0.4, 0.1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boca"]
+size = Vector2(240, 280)
+
+[node name="triturador" type="Node2D"]
+z_index = 20
+script = ExtResource("1_script")
+
+[node name="corpo" type="Sprite2D" parent="."]
+position = Vector2(-132, -25)
+texture = ExtResource("2_corpo")
+
+[node name="engrenagem_cima" type="Sprite2D" parent="."]
+position = Vector2(-10, -96)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_g64")
+script = ExtResource("5_girar")
+velocidade_graus = 130.0
+
+[node name="engrenagem_meio" type="Sprite2D" parent="."]
+position = Vector2(-10, 0)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_g64")
+script = ExtResource("5_girar")
+velocidade_graus = -130.0
+
+[node name="engrenagem_baixo" type="Sprite2D" parent="."]
+position = Vector2(-10, 96)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_g64")
+script = ExtResource("5_girar")
+velocidade_graus = 130.0
+
+[node name="dente1" type="Sprite2D" parent="."]
+position = Vector2(34, -48)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("4_g32")
+script = ExtResource("5_girar")
+velocidade_graus = -260.0
+
+[node name="dente2" type="Sprite2D" parent="."]
+position = Vector2(34, 48)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("4_g32")
+script = ExtResource("5_girar")
+velocidade_graus = -260.0
+
+[node name="luz_olho1" type="PointLight2D" parent="."]
+position = Vector2(-155, -60)
+energy = 1.3
+texture = SubResource("GradientTexture2D_olho")
+texture_scale = 3.0
+
+[node name="luz_olho2" type="PointLight2D" parent="."]
+position = Vector2(-155, 16)
+energy = 1.3
+texture = SubResource("GradientTexture2D_olho")
+texture_scale = 3.0
+
+[node name="fumaca1" type="CPUParticles2D" parent="."]
+position = Vector2(-189, -196)
+amount = 14
+lifetime = 1.8
+preprocess = 1.8
+local_coords = false
+direction = Vector2(-0.4, -1)
+spread = 14.0
+gravity = Vector2(-10, -14)
+initial_velocity_min = 16.0
+initial_velocity_max = 30.0
+scale_amount_min = 4.0
+scale_amount_max = 9.0
+color_ramp = SubResource("Gradient_fumaca")
+
+[node name="fumaca2" type="CPUParticles2D" parent="."]
+position = Vector2(-129, -196)
+amount = 14
+lifetime = 1.8
+preprocess = 1.8
+local_coords = false
+direction = Vector2(-0.4, -1)
+spread = 14.0
+gravity = Vector2(-10, -14)
+initial_velocity_min = 16.0
+initial_velocity_max = 30.0
+scale_amount_min = 4.0
+scale_amount_max = 9.0
+color_ramp = SubResource("Gradient_fumaca")
+
+[node name="faiscas" type="CPUParticles2D" parent="."]
+position = Vector2(42, 0)
+amount = 26
+lifetime = 0.45
+direction = Vector2(1, 0)
+spread = 75.0
+gravity = Vector2(0, 260)
+initial_velocity_min = 60.0
+initial_velocity_max = 170.0
+scale_amount_min = 1.5
+scale_amount_max = 2.6
+color_ramp = SubResource("Gradient_faisca")
+
+[node name="poeira" type="CPUParticles2D" parent="."]
+position = Vector2(58, 0)
+emitting = false
+amount = 16
+lifetime = 0.9
+explosiveness = 0.5
+direction = Vector2(1, -0.2)
+spread = 85.0
+gravity = Vector2(0, 30)
+initial_velocity_min = 30.0
+initial_velocity_max = 95.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+color_ramp = SubResource("Gradient_poeira")
+
+[node name="hitbox" parent="." instance=ExtResource("6_hitbox")]
+damage = 4
+knockback_force = 260.0
+knockback_upward = -260.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-60, 0)
+shape = SubResource("RectangleShape2D_boca")
+
+[node name="rugido" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
+position = Vector2(-30, 0)
+stream = ExtResource("7_rugido")
+volume_db = -3.0
+max_distance = 900.0
+
+[node name="alarme" type="AudioStreamPlayer" parent="."]
+bus = &"Efeitos"
+stream = ExtResource("8_alarme")
+volume_db = -5.0
+
+[node name="mastigar" type="AudioStreamPlayer2D" parent="."]
+bus = &"Efeitos"
+position = Vector2(60, 0)
+stream = ExtResource("9_mastigar")
+volume_db = -1.0
+max_distance = 700.0

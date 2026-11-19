@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://comum/items/checkpoint/checkpoint.gd" id="1_cp"]
+
+[sub_resource type="Gradient" id="Gradient_luz"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_luz"]
+gradient = SubResource("Gradient_luz")
+width = 64
+height = 64
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_brilho"]
+colors = PackedColorArray(0.6, 1, 0.65, 1, 0.3, 1, 0.4, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp"]
+size = Vector2(22, 46)
+
+[node name="checkpoint" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_cp")
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_cp")
+
+[node name="base" type="Polygon2D" parent="."]
+color = Color(0.17, 0.19, 0.23, 1)
+polygon = PackedVector2Array(-8, 0, 8, 0, 6, -4, -6, -4)
+
+[node name="mastro" type="Polygon2D" parent="."]
+color = Color(0.55, 0.6, 0.7, 1)
+polygon = PackedVector2Array(-1, -4, 1, -4, 1, -38, -1, -38)
+
+[node name="bandeira" type="Polygon2D" parent="."]
+color = Color(0.9, 0.22, 0.16, 1)
+polygon = PackedVector2Array(1, -37, 17, -31, 1, -24)
+
+[node name="lampada" type="Polygon2D" parent="."]
+color = Color(1, 0.4, 0.3, 1)
+polygon = PackedVector2Array(-2, -41, 2, -41, 3, -39, 2, -37, -2, -37, -3, -39)
+
+[node name="luz" type="PointLight2D" parent="."]
+position = Vector2(0, -36)
+color = Color(1, 0.4, 0.3, 1)
+energy = 0.35
+texture = SubResource("GradientTexture2D_luz")
+texture_scale = 1.6
+
+[node name="brilho" type="CPUParticles2D" parent="."]
+position = Vector2(0, -30)
+emitting = false
+amount = 22
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 40)
+initial_velocity_min = 35.0
+initial_velocity_max = 95.0
+scale_amount_min = 1.5
+scale_amount_max = 2.8
+color_ramp = SubResource("Gradient_brilho")
