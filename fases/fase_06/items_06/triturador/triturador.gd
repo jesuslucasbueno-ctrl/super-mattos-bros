@@ -15,6 +15,9 @@ extends Node2D
 @export var raio_parado: float = 28.0
 @export var altura_boca: float = 280.0
 @export var carencia_inicial: float = 3.0   # segundos extras no começo da fase
+## Largura da fase (px). A dificuldade do Triturador cresce conforme o jogador avança:
+## no começo ele demora a vir e é lento; no final vem rápido e quase sem aviso.
+@export var largura_fase: float = 9024.0
 
 enum Estado { OCULTO, AVISO, ATACANDO, RECUANDO }
 
@@ -59,10 +62,20 @@ func _physics_process(delta: float) -> void:
 		Estado.ATACANDO:
 			_avancar(delta)
 		Estado.RECUANDO:
-			global_position.x -= velocidade * 2.5 * delta
+			global_position.x -= _velocidade_atual() * 2.5 * delta
 
 
 # ---------------------------------------------------------------- detecção
+func _progresso() -> float:
+	if not is_instance_valid(_jogador):
+		return 0.0
+	return clampf(_jogador.global_position.x / largura_fase, 0.0, 1.0)
+
+
+func _velocidade_atual() -> float:
+	return velocidade * lerpf(0.8, 1.35, _progresso())
+
+
 func _jogador_parado() -> bool:
 	return _jogador.global_position.distance_to(_ref_pos) <= raio_parado
 
@@ -74,7 +87,7 @@ func _contar_parado(delta: float) -> void:
 		return
 
 	_tempo_parado += delta
-	if _tempo_parado >= tempo_parado_para_surgir:
+	if _tempo_parado >= tempo_parado_para_surgir * lerpf(1.4, 0.7, _progresso()):
 		_avisar()
 
 
@@ -85,13 +98,14 @@ func _avisar() -> void:
 	alarme.play()
 	_camada_aviso.visible = true
 
+	var duracao_aviso := tempo_aviso * lerpf(1.3, 0.75, _progresso())
 	var decorrido := 0.0
-	while decorrido < tempo_aviso and is_inside_tree():
+	while decorrido < duracao_aviso and is_inside_tree():
 		await get_tree().process_frame
 		var dt := get_process_delta_time()
 		decorrido += dt
 
-		var intensidade := decorrido / tempo_aviso
+		var intensidade := decorrido / duracao_aviso
 		_flash.color.a = (0.12 + 0.2 * intensidade) * (0.5 + 0.5 * sin(decorrido * 14.0))
 		_rotulo.modulate.a = 0.55 + 0.45 * sin(decorrido * 16.0)
 		_tremer_camera(0.5 + 2.0 * intensidade)
@@ -126,7 +140,7 @@ func _surgir() -> void:
 func _avancar(delta: float) -> void:
 	# O golpe nunca tira mais vida do que o jogador tem (a HUD não aceita vida negativa).
 	hitbox.damage = clampi(Globals.player_life, 1, 4)
-	global_position.x += velocidade * delta
+	global_position.x += _velocidade_atual() * delta
 	global_position.y = lerpf(global_position.y, _jogador.global_position.y - 20.0, 1.6 * delta)
 
 	_tempo_comer -= delta

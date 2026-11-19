@@ -10,6 +10,8 @@ extends Node2D
 @export var tempo_subida: float = 0.9
 ## Quanto da haste aparece acima da cabeça parada (curto, para não atravessar o teto).
 @export var comprimento_haste: float = 8.0
+## Dano causado ao jogador (a fase aumenta isso do começo para o final).
+@export var dano_acerto: int = 2
 
 @onready var cabeca: Node2D = $cabeca
 @onready var haste: ColorRect = $haste
@@ -23,6 +25,7 @@ extends Node2D
 
 func _ready() -> void:
 	dano.monitoring = false
+	dano.damage = dano_acerto
 	dano.area_entered.connect(_on_dano_acertou)
 	haste.position.y = -comprimento_haste
 	_ciclo()

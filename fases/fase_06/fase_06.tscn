@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bd7sdsbn8lvr4" path="res://fases/fase_06/tilesets_06/tileset_06.png" id="tileset_png"]
 [ext_resource type="PackedScene" uid="uid://demjixgkr2ork" path="res://comum/player/player.tscn" id="player"]
 [ext_resource type="PackedScene" uid="uid://dl4bcox5yb2pm" path="res://comum/items/cherry/cherry.tscn" id="cherry"]
-[ext_resource type="PackedScene" uid="uid://bojo7oy7se5hp" path="res://comum/inimigos/skunk/skunk.tscn" id="skunk"]
 [ext_resource type="PackedScene" uid="uid://cup5a2m2r5sh4" path="res://comum/inimigos/eagle/eagle.tscn" id="eagle"]
 [ext_resource type="PackedScene" uid="uid://8ettn87dkgvr" path="res://comum/items/crate/crate.tscn" id="crate"]
 [ext_resource type="PackedScene" uid="uid://kb3w63vwvpxm" path="res://comum/items/spikes/spikes.tscn" id="spikes"]
@@ -2679,42 +2678,42 @@ position = Vector2(6824, 304)
 [node name="esteira1" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(448, 304)
 largura = 128
-velocidade = 50
+velocidade = 36.5
 
 [node name="esteira2" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(640, 304)
 largura = 160
-velocidade = -70
+velocidade = -52.0
 
 [node name="esteira3" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(848, 304)
 largura = 80
-velocidade = 110
+velocidade = 83.2
 
 [node name="esteira4" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(2736, 304)
 largura = 128
-velocidade = 80
+velocidade = 70.6
 
 [node name="esteira5" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(2912, 304)
 largura = 128
-velocidade = -60
+velocidade = -53.6
 
 [node name="esteira6" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(5584, 304)
 largura = 112
-velocidade = 100
+velocidade = 107.1
 
 [node name="esteira7" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(5744, 304)
 largura = 64
-velocidade = -50
+velocidade = -54.1
 
 [node name="esteira8" parent="esteiras" instance=ExtResource("esteira")]
 position = Vector2(6256, 304)
 largura = 160
-velocidade = 120
+velocidade = 133.9
 
 [node name="prensas" type="Node2D" parent="."]
 
@@ -2722,181 +2721,337 @@ velocidade = 120
 position = Vector2(1096, 192)
 atraso_inicial = 0
 altura_curso = 96
+tempo_espera = 2.24
+tempo_aviso = 0.84
+tempo_embaixo = 0.52
+tempo_subida = 1.14
+dano_acerto = 1
 
 [node name="prensa2" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(1160, 192)
 atraso_inicial = 0.7
 altura_curso = 96
+tempo_espera = 2.23
+tempo_aviso = 0.83
+tempo_embaixo = 0.52
+tempo_subida = 1.14
+dano_acerto = 1
 
 [node name="prensa3" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(1224, 192)
 atraso_inicial = 1.4
 altura_curso = 96
+tempo_espera = 2.22
+tempo_aviso = 0.83
+tempo_embaixo = 0.51
+tempo_subida = 1.13
+dano_acerto = 1
 
 [node name="prensa4" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(1288, 192)
 atraso_inicial = 2.1
 altura_curso = 96
+tempo_espera = 2.22
+tempo_aviso = 0.83
+tempo_embaixo = 0.51
+tempo_subida = 1.13
+dano_acerto = 1
 
 [node name="prensa5" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(2648, 192)
 atraso_inicial = 0
 altura_curso = 96
+tempo_espera = 2.02
+tempo_aviso = 0.75
+tempo_embaixo = 0.47
+tempo_subida = 1.05
+dano_acerto = 1
 
 [node name="prensa6" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(2712, 192)
 atraso_inicial = 0.8
 altura_curso = 96
+tempo_espera = 2.01
+tempo_aviso = 0.74
+tempo_embaixo = 0.47
+tempo_subida = 1.05
+dano_acerto = 1
 
 [node name="prensa7" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(3096, 192)
 atraso_inicial = 0
 altura_curso = 96
+tempo_espera = 1.96
+tempo_aviso = 0.72
+tempo_embaixo = 0.46
+tempo_subida = 1.03
+dano_acerto = 2
 
 [node name="prensa8" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(3160, 192)
 atraso_inicial = 0.8
 altura_curso = 96
+tempo_espera = 1.95
+tempo_aviso = 0.72
+tempo_embaixo = 0.46
+tempo_subida = 1.03
+dano_acerto = 2
 
 [node name="prensa9" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(8888, 192)
 atraso_inicial = 0
 altura_curso = 96
+tempo_espera = 1.12
+tempo_aviso = 0.39
+tempo_embaixo = 0.28
+tempo_subida = 0.71
+dano_acerto = 2
 
 [node name="prensa10" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(8952, 192)
 atraso_inicial = 0.9
 altura_curso = 96
+tempo_espera = 1.11
+tempo_aviso = 0.38
+tempo_embaixo = 0.28
+tempo_subida = 0.70
+dano_acerto = 2
 
 [node name="prensa11" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(3928, 240)
 atraso_inicial = 0
 altura_curso = 50
+tempo_espera = 1.84
+tempo_aviso = 0.67
+tempo_embaixo = 0.43
+tempo_subida = 0.98
+dano_acerto = 2
 
 [node name="prensa12" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(4024, 240)
 atraso_inicial = 0.5
 altura_curso = 50
+tempo_espera = 1.82
+tempo_aviso = 0.67
+tempo_embaixo = 0.43
+tempo_subida = 0.98
+dano_acerto = 2
 
 [node name="prensa13" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(4120, 240)
 atraso_inicial = 1
 altura_curso = 50
+tempo_espera = 1.81
+tempo_aviso = 0.66
+tempo_embaixo = 0.43
+tempo_subida = 0.97
+dano_acerto = 2
 
 [node name="prensa14" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(4216, 240)
 atraso_inicial = 1.5
 altura_curso = 50
+tempo_espera = 1.79
+tempo_aviso = 0.66
+tempo_embaixo = 0.42
+tempo_subida = 0.97
+dano_acerto = 2
 
 [node name="prensa15" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(5864, 192)
 atraso_inicial = 0
 altura_curso = 96
+tempo_espera = 1.56
+tempo_aviso = 0.56
+tempo_embaixo = 0.37
+tempo_subida = 0.88
+dano_acerto = 2
 
 [node name="prensa16" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(5928, 192)
 atraso_inicial = 0.6
 altura_curso = 96
+tempo_espera = 1.55
+tempo_aviso = 0.56
+tempo_embaixo = 0.37
+tempo_subida = 0.87
+dano_acerto = 2
 
 [node name="prensa17" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(5992, 192)
 atraso_inicial = 1.2
 altura_curso = 96
+tempo_espera = 1.54
+tempo_aviso = 0.56
+tempo_embaixo = 0.37
+tempo_subida = 0.87
+dano_acerto = 2
 
 [node name="prensa18" parent="prensas" instance=ExtResource("prensa")]
 position = Vector2(6344, 192)
 atraso_inicial = 0
 altura_curso = 96
+tempo_espera = 1.49
+tempo_aviso = 0.53
+tempo_embaixo = 0.36
+tempo_subida = 0.85
+dano_acerto = 2
 
 [node name="vapores" type="Node2D" parent="."]
 
 [node name="vapor1" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(392, 304)
 atraso_inicial = 0
+tempo_desligado = 3.33
+tempo_aviso = 0.88
+tempo_ligado = 0.62
 
 [node name="vapor2" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(1496, 208)
 atraso_inicial = 0
+tempo_desligado = 3.15
+tempo_aviso = 0.83
+tempo_ligado = 0.67
 
 [node name="vapor3" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(1560, 144)
 atraso_inicial = 1.2
+tempo_desligado = 3.14
+tempo_aviso = 0.82
+tempo_ligado = 0.67
 
 [node name="vapor4" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(2888, 304)
 atraso_inicial = 0.5
+tempo_desligado = 2.92
+tempo_aviso = 0.76
+tempo_ligado = 0.73
 
 [node name="vapor5" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(3432, 304)
 atraso_inicial = 0
+tempo_desligado = 2.83
+tempo_aviso = 0.73
+tempo_ligado = 0.75
 
 [node name="vapor6" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(3592, 304)
 atraso_inicial = 1
+tempo_desligado = 2.80
+tempo_aviso = 0.72
+tempo_ligado = 0.76
 
 [node name="vapor7" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(3992, 208)
 atraso_inicial = 0
+tempo_desligado = 2.74
+tempo_aviso = 0.70
+tempo_ligado = 0.78
 
 [node name="vapor8" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(4152, 208)
 atraso_inicial = 0.7
+tempo_desligado = 2.71
+tempo_aviso = 0.69
+tempo_ligado = 0.78
 
 [node name="vapor9" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(4312, 208)
 atraso_inicial = 1.4
+tempo_desligado = 2.68
+tempo_aviso = 0.68
+tempo_ligado = 0.79
 
 [node name="vapor10" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(5720, 304)
 atraso_inicial = 0
+tempo_desligado = 2.45
+tempo_aviso = 0.61
+tempo_ligado = 0.85
 
 [node name="vapor11" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(6216, 304)
 atraso_inicial = 0.4
+tempo_desligado = 2.37
+tempo_aviso = 0.59
+tempo_ligado = 0.88
 
 [node name="vapor12" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(6840, 96)
 atraso_inicial = 0
+tempo_desligado = 2.26
+tempo_aviso = 0.56
+tempo_ligado = 0.90
 
 [node name="vapor13" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(6920, 96)
 atraso_inicial = 0.8
+tempo_desligado = 2.25
+tempo_aviso = 0.55
+tempo_ligado = 0.91
 
 [node name="vapor14" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(6984, 96)
 atraso_inicial = 1.6
+tempo_desligado = 2.24
+tempo_aviso = 0.55
+tempo_ligado = 0.91
 
 [node name="vapor15" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7448, 304)
 atraso_inicial = 0
+tempo_desligado = 2.16
+tempo_aviso = 0.53
+tempo_ligado = 0.93
 
 [node name="vapor16" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7512, 304)
 atraso_inicial = 0.45
+tempo_desligado = 2.15
+tempo_aviso = 0.53
+tempo_ligado = 0.93
 
 [node name="vapor17" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7576, 304)
 atraso_inicial = 0.9
+tempo_desligado = 2.14
+tempo_aviso = 0.52
+tempo_ligado = 0.94
 
 [node name="vapor18" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7640, 304)
 atraso_inicial = 1.35
+tempo_desligado = 2.13
+tempo_aviso = 0.52
+tempo_ligado = 0.94
 
 [node name="vapor19" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7704, 304)
 atraso_inicial = 0
+tempo_desligado = 2.12
+tempo_aviso = 0.52
+tempo_ligado = 0.94
 
 [node name="vapor20" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7768, 304)
 atraso_inicial = 0.45
+tempo_desligado = 2.11
+tempo_aviso = 0.51
+tempo_ligado = 0.94
 
 [node name="vapor21" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7832, 304)
 atraso_inicial = 0.9
+tempo_desligado = 2.10
+tempo_aviso = 0.51
+tempo_ligado = 0.95
 
 [node name="vapor22" parent="vapores" instance=ExtResource("vapor")]
 position = Vector2(7896, 304)
 atraso_inicial = 1.35
+tempo_desligado = 2.09
+tempo_aviso = 0.51
+tempo_ligado = 0.95
 
 [node name="plataformas" type="Node2D" parent="."]
 
@@ -3552,173 +3707,247 @@ position = Vector2(8720, 284)
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="robo1" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(328, 304)
-turn_time = 3.0
-
-[node name="robo2" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(1352, 304)
-turn_time = 3.0
-
-[node name="robo3" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(2280, 304)
-turn_time = 3.0
-
-[node name="robo4" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(2408, 304)
-turn_time = 3.0
-
-[node name="robo5" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(2664, 304)
-turn_time = 3.0
-
-[node name="robo6" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(3496, 304)
-turn_time = 3.0
-
-[node name="robo7" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(4504, 304)
-turn_time = 3.0
-
-[node name="robo8" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(5960, 304)
-turn_time = 3.0
-
-[node name="robo9" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(6968, 304)
-turn_time = 3.0
-
-[node name="robo10" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(7192, 304)
-turn_time = 3.0
-
-[node name="robo11" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(7608, 304)
-turn_time = 3.0
-
-[node name="robo12" parent="enemies" instance=ExtResource("skunk")]
-modulate = Color(0.75, 0.85, 1, 1)
-position = Vector2(7992, 304)
-turn_time = 3.0
-
 [node name="esqueleto1" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(1192, 304)
+position = Vector2(328, 304)
 turn_time = 3.5
+speed = 34
+multiplicador_perseguicao = 1.2
+alcance_visao = 110
+cooldown_ataque = 2.4
+max_health = 1
+dano_ataque = 1
 
 [node name="esqueleto2" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(2360, 304)
+position = Vector2(1352, 304)
 turn_time = 3.5
+speed = 34
+multiplicador_perseguicao = 1.2
+alcance_visao = 110
+cooldown_ataque = 2.4
+max_health = 1
+dano_ataque = 1
 
 [node name="esqueleto3" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(3624, 304)
+position = Vector2(2360, 304)
 turn_time = 3.5
+speed = 34
+multiplicador_perseguicao = 1.2
+alcance_visao = 110
+cooldown_ataque = 2.4
+max_health = 1
+dano_ataque = 1
 
 [node name="esqueleto4" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(4440, 304)
+position = Vector2(3496, 304)
 turn_time = 3.5
+speed = 44
+multiplicador_perseguicao = 1.5
+alcance_visao = 150
+cooldown_ataque = 1.7
+max_health = 2
+dano_ataque = 2
 
 [node name="esqueleto5" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(6008, 304)
+position = Vector2(3624, 304)
 turn_time = 3.5
+speed = 44
+multiplicador_perseguicao = 1.5
+alcance_visao = 150
+cooldown_ataque = 1.7
+max_health = 2
+dano_ataque = 2
 
 [node name="esqueleto6" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(6888, 304)
+position = Vector2(4440, 304)
 turn_time = 3.5
+speed = 44
+multiplicador_perseguicao = 1.5
+alcance_visao = 150
+cooldown_ataque = 1.7
+max_health = 2
+dano_ataque = 2
 
 [node name="esqueleto7" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(7736, 304)
+position = Vector2(4504, 304)
 turn_time = 3.5
+speed = 44
+multiplicador_perseguicao = 1.5
+alcance_visao = 150
+cooldown_ataque = 1.7
+max_health = 2
+dano_ataque = 2
 
 [node name="esqueleto8" parent="enemies" instance=ExtResource("esqueleto")]
-position = Vector2(7832, 304)
+position = Vector2(5960, 304)
 turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
 
 [node name="esqueleto9" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(6008, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto10" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(6888, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto11" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(6968, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto12" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(7192, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto13" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(7608, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto14" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(7736, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto15" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(7832, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto16" parent="enemies" instance=ExtResource("esqueleto")]
+position = Vector2(7992, 304)
+turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
+
+[node name="esqueleto17" parent="enemies" instance=ExtResource("esqueleto")]
 position = Vector2(8920, 304)
 turn_time = 3.5
+speed = 56
+multiplicador_perseguicao = 1.8
+alcance_visao = 190
+cooldown_ataque = 1.1
+max_health = 3
+dano_ataque = 2
 
 [node name="drone1" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(1850, 70)
-speed = 100.0
-dive_speed = 280.0
-attack_cooldown = 4.5
-patrol_distance = 130.0
+speed = 80
+dive_speed = 220
+attack_cooldown = 6
+patrol_distance = 120
 
 [node name="drone2" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(3300, 200)
-speed = 100.0
-dive_speed = 280.0
+speed = 100
+dive_speed = 280
 attack_cooldown = 4.5
-patrol_distance = 130.0
+patrol_distance = 130
 
 [node name="drone3" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(2350, 120)
-speed = 100.0
-dive_speed = 280.0
-attack_cooldown = 4.5
-patrol_distance = 130.0
+speed = 80
+dive_speed = 220
+attack_cooldown = 6
+patrol_distance = 120
 
 [node name="drone4" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(4944, 200)
-speed = 100.0
-dive_speed = 280.0
+speed = 100
+dive_speed = 280
 attack_cooldown = 4.5
-patrol_distance = 130.0
+patrol_distance = 130
 
 [node name="drone5" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(5200, 150)
-speed = 100.0
-dive_speed = 280.0
+speed = 100
+dive_speed = 280
 attack_cooldown = 4.5
-patrol_distance = 130.0
+patrol_distance = 130
 
 [node name="drone6" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(6880, 50)
-speed = 100.0
-dive_speed = 280.0
-attack_cooldown = 4.5
-patrol_distance = 130.0
+speed = 120
+dive_speed = 320
+attack_cooldown = 3.5
+patrol_distance = 150
 
 [node name="drone7" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(7120, 100)
-speed = 100.0
-dive_speed = 280.0
-attack_cooldown = 4.5
-patrol_distance = 130.0
+speed = 120
+dive_speed = 320
+attack_cooldown = 3.5
+patrol_distance = 150
 
 [node name="drone8" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(8368, 190)
-speed = 100.0
-dive_speed = 280.0
-attack_cooldown = 4.5
-patrol_distance = 130.0
+speed = 120
+dive_speed = 320
+attack_cooldown = 3.5
+patrol_distance = 150
 
 [node name="drone9" parent="enemies" instance=ExtResource("eagle")]
 modulate = Color(0.8, 0.88, 1, 1)
 position = Vector2(8656, 220)
-speed = 100.0
-dive_speed = 280.0
-attack_cooldown = 4.5
-patrol_distance = 130.0
+speed = 120
+dive_speed = 320
+attack_cooldown = 3.5
+patrol_distance = 150
 
 [node name="chave" parent="." instance=ExtResource("chave")]
 position = Vector2(8984, 254)
@@ -4276,6 +4505,7 @@ indice = 9
 position = Vector2(72, 296)
 
 [node name="triturador" parent="." instance=ExtResource("triturador")]
+largura_fase = 9024
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(72, 296)
