@@ -6,6 +6,10 @@ const WALL_SLIDE_SPEED = 60.0
 const WALL_JUMP_SPEED = 100.0
 const WALL_JUMP_DURATION = 0.18
 
+## Multiplicadores controlados pelos poderes (Token Lendário). 1.0 = normal.
+var speed_mult: float = 1.0
+var jump_mult: float = 1.0
+
 var wall_jump_time: float = 0.0
 var wall_sliding: bool = false
 
@@ -47,9 +51,9 @@ func _physics_process(delta: float) -> void:
 	# Preserva o impulso horizontal durante o wall jump.
 	if wall_jump_time <= 0.0:
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * SPEED * speed_mult
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, SPEED * speed_mult)
 
 	wall_sliding = (
 		wall_direction != 0
@@ -63,10 +67,10 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept") and not taking_damage:
 		if is_on_floor():
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY * jump_mult
 			Sons.tocar("pulo")
 		elif wall_direction != 0 and wall_jump_time <= 0.0:
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY * jump_mult
 			velocity.x = wall_direction * WALL_JUMP_SPEED
 			wall_jump_time = WALL_JUMP_DURATION
 			wall_sliding = false

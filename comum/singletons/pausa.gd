@@ -59,6 +59,7 @@ func fechar() -> void:
 func _reiniciar_fase() -> void:
 	_salvar_volumes()
 	Checkpoint.limpar()
+	Poderes.limpar()
 	Globals.player_life = Globals.max_life
 	Globals.cherries = 0
 	Globals.gems = 0

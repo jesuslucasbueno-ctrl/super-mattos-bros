@@ -88,6 +88,7 @@ func _ready() -> void:
 	Globals.cherries = 0
 	Globals.gems = 0
 	Checkpoint.limpar()
+	Poderes.limpar()
 	
 	criar_cards()
 	

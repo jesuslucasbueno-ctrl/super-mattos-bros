@@ -22,6 +22,7 @@ Tela="*res://comum/singletons/tela.gd"
 Checkpoint="*res://comum/singletons/checkpoint.gd"
 Sons="*res://comum/singletons/sons.gd"
 Pausa="*res://comum/singletons/pausa.gd"
+Poderes="*res://comum/singletons/poderes.gd"
 
 [display]
 

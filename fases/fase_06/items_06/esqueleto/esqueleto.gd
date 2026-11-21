@@ -13,6 +13,10 @@ enum Estado { PATRULHA, ALERTA, PERSEGUIR, ATACAR, RECUPERAR, DANO, MORTO }
 @export var turn_time: float = 3.5
 @export var max_health: int = 2
 @export var dano_ataque: int = 2
+## Velocidade com que ele se joga para frente durante a estocada (px/s).
+@export var investida: float = 55.0
+## Pular em cima da cabeça mata na hora (se desligado, tira só 1 de vida).
+@export var pisao_mata: bool = true
 
 const FRAME_INICIO_GOLPE := 8
 const FRAME_FIM_GOLPE := 13
@@ -29,6 +33,7 @@ var _espera_ataque: float = 0.0
 @onready var hitbox: Hitbox = $hitbox
 @onready var ataque: Hitbox = $ataque
 @onready var hurtbox: Hurtbox = $hurtbox
+@onready var cabeca: Area2D = $cabeca
 @onready var wall_detector: RayCast2D = $wall_detector
 @onready var floor_detector: RayCast2D = $floor_detector
 @onready var som_dano: AudioStreamPlayer2D = $som_dano
@@ -44,6 +49,7 @@ func _ready() -> void:
 	hurtbox.damage_received.connect(_on_damage_received)
 	anim.animation_finished.connect(_on_anim_animation_finished)
 	anim.frame_changed.connect(_on_frame_changed)
+	cabeca.body_entered.connect(_on_cabeca_body_entered)
 	timer.wait_time = turn_time
 	ataque.enabled = true
 	ataque.monitoring = false
@@ -55,6 +61,11 @@ func _physics_process(delta: float) -> void:
 	if not is_instance_valid(_jogador):
 		_jogador = get_tree().get_first_node_in_group("player")
 
+	# Caiu para fora do mundo (poço): some, em vez de cair para sempre.
+	if global_position.y > 600.0:
+		queue_free()
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	_espera_ataque = maxf(_espera_ataque - delta, 0.0)
@@ -62,7 +73,14 @@ func _physics_process(delta: float) -> void:
 	match estado:
 		Estado.PATRULHA:
 			_patrulhar()
-		Estado.ALERTA, Estado.ATACAR, Estado.DANO:
+		Estado.ATACAR:
+			# Na estocada ele avança junto com a lança (sem cair da plataforma).
+			var golpeando := anim.animation == &"attack" and anim.frame >= FRAME_INICIO_GOLPE and anim.frame <= FRAME_FIM_GOLPE
+			if golpeando and not _borda_ou_parede():
+				velocity.x = direction * investida
+			else:
+				velocity.x = move_toward(velocity.x, 0.0, 600.0 * delta)
+		Estado.ALERTA, Estado.DANO:
 			velocity.x = move_toward(velocity.x, 0.0, 600.0 * delta)
 		Estado.PERSEGUIR:
 			_perseguir()
@@ -159,7 +177,7 @@ func _tocar(nome: String) -> void:
 func _atualizar_detectores() -> void:
 	wall_detector.target_position.x = wall_reach * direction
 	floor_detector.position.x = floor_offset * direction
-	ataque.get_node("CollisionShape2D").position.x = 22.0 * direction
+	ataque.get_node("CollisionShape2D").position.x = 25.0 * direction
 	wall_detector.force_raycast_update()
 	floor_detector.force_raycast_update()
 
@@ -217,9 +235,7 @@ func _on_damage_received(amount: int, knockback: Vector2) -> void:
 		return
 
 	health -= amount
-	if knockback != Vector2.ZERO:
-		velocity.x = knockback.x * 0.5
-	velocity.y = 0.0
+	velocity = Vector2.ZERO   # sem empurrão: ele nunca é jogado para fora da plataforma
 
 	if health <= 0:
 		die()
@@ -228,3 +244,19 @@ func _on_damage_received(amount: int, knockback: Vector2) -> void:
 		estado = Estado.DANO
 		ataque.set_deferred("monitoring", false)
 		anim.play("hurt")
+
+
+# ---------------------------------------------------------------- pisão
+func _on_cabeca_body_entered(body: Node2D) -> void:
+	if is_dead or not body.is_in_group("player"):
+		return
+	# Só vale se o jogador estiver CAINDO e com os pés acima do esqueleto.
+	if body.velocity.y <= 0.0 or body.global_position.y > global_position.y - 26.0:
+		return
+
+	body.velocity.y = -330.0   # quique
+	Sons.tocar("pisao")
+	if pisao_mata:
+		die()
+	else:
+		_on_damage_received(1, Vector2.ZERO)

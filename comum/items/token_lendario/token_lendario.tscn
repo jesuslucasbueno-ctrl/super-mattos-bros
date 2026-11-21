@@ -1,0 +1,142 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://comum/items/token_lendario/token_lendario.gd" id="1_token"]
+[ext_resource type="Texture2D" path="res://comum/items/token_lendario/token_lendario.png" id="2_tex"]
+[ext_resource type="Texture2D" path="res://comum/items/token_lendario/halo.png" id="3_halo"]
+
+[sub_resource type="AtlasTexture" id="t_0"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_1"]
+atlas = ExtResource("2_tex")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_2"]
+atlas = ExtResource("2_tex")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_3"]
+atlas = ExtResource("2_tex")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_4"]
+atlas = ExtResource("2_tex")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_5"]
+atlas = ExtResource("2_tex")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_6"]
+atlas = ExtResource("2_tex")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="t_7"]
+atlas = ExtResource("2_tex")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_token"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("t_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("t_7")
+}],
+"loop": true,
+"name": &"brilhar",
+"speed": 8.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_add"]
+blend_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_token"]
+radius = 24.0
+
+[sub_resource type="Gradient" id="Gradient_luz_token"]
+colors = PackedColorArray(0.85, 0.65, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_luz_token"]
+gradient = SubResource("Gradient_luz_token")
+width = 64
+height = 64
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_brilho_token"]
+colors = PackedColorArray(1, 0.92, 0.55, 1, 0.65, 0.4, 1, 0)
+
+[node name="token_lendario" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_token")
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_token")
+
+[node name="halo" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_add")
+scale = Vector2(1, 1)
+texture = ExtResource("3_halo")
+
+[node name="luz" type="PointLight2D" parent="."]
+color = Color(0.8, 0.6, 1, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_luz_token")
+texture_scale = 4.0
+
+[node name="brilhos" type="CPUParticles2D" parent="."]
+amount = 18
+lifetime = 1.8
+preprocess = 1.8
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 18.0
+direction = Vector2(0, -1)
+spread = 70.0
+gravity = Vector2(0, -8)
+initial_velocity_min = 4.0
+initial_velocity_max = 18.0
+scale_amount_min = 1.0
+scale_amount_max = 2.4
+color_ramp = SubResource("Gradient_brilho_token")
+
+[node name="explosao" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 56
+lifetime = 1.1
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 45)
+initial_velocity_min = 60.0
+initial_velocity_max = 170.0
+scale_amount_min = 1.5
+scale_amount_max = 3.4
+color_ramp = SubResource("Gradient_brilho_token")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_token")
+animation = &"brilhar"

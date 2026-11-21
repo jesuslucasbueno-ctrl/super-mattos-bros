@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://comum/items/moeda/moeda.gd" id="1_moeda"]
+[ext_resource type="Texture2D" path="res://comum/items/moeda/moeda.png" id="2_tex"]
+
+[sub_resource type="AtlasTexture" id="m_0"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_1"]
+atlas = ExtResource("2_tex")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_2"]
+atlas = ExtResource("2_tex")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_3"]
+atlas = ExtResource("2_tex")
+region = Rect2(60, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_4"]
+atlas = ExtResource("2_tex")
+region = Rect2(80, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_5"]
+atlas = ExtResource("2_tex")
+region = Rect2(100, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_6"]
+atlas = ExtResource("2_tex")
+region = Rect2(120, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_7"]
+atlas = ExtResource("2_tex")
+region = Rect2(140, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="m_8"]
+atlas = ExtResource("2_tex")
+region = Rect2(160, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_moeda"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("m_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("m_8")
+}],
+"loop": true,
+"name": &"girar",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_moeda"]
+radius = 9.0
+
+[node name="moeda" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_moeda")
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_moeda")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_moeda")
+animation = &"girar"
